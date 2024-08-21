@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('downloadButton').addEventListener('click', downloadImage);
 
     function postData(imageData, negativeFeedback="",styleData) {
-      fetch('http://localhost:5000/data', {    
+      fetch('https://projects-completion-biography-dimensions.trycloudflare.com/data', {    
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
