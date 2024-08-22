@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const text = document.getElementById('processingText');
   const feedbackSection = document.getElementById('feedbackSection');
   let processed_image = "";
+  const sectionStyles = document.getElementById('sec-ff73');
   document.getElementById('negativeFeedbackInput').value = "";
   // Trigger file input click on upload button click
   uploadButton.addEventListener('click', () => {
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleSectionB();
             const img = new Image();
             img.src = URL.createObjectURL(file); // Create a URL for the file
+            sectionStyles.style.minHeight = '100vh';
 
             img.onload = () => {
                 imageData = scaleImageToBase64(img);
@@ -153,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
       stylesSelect = event.target.id;
       console.log(stylesSelect);
       dropArea.style.display = 'none';
+      sectionStyles.style.removeProperty('min-height');
       toggleSectionB();
       loadingSpinner.style.display = 'block';
       canvas.style.display = 'none';
@@ -322,9 +325,4 @@ document.addEventListener('DOMContentLoaded', () => {
       startImageProcessing();
 
     });
-
-
-
-
-
 });
