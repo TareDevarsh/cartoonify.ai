@@ -201,30 +201,30 @@
       </div>
     </section>
     <section id="imageSection">
-      <canvas id="hiddenCanvas" style="display: none;"></canvas>
-      
-
-      <div id="loadingSpinner" style="display: none;">
-    <div class="spinner"></div>
-      <p id="processingText">Processing image...</p>
-    </div>
-    <button id="downloadButton" class="upload-button bordered-button" style="display: none;">Download Image</button>
-    <button id="retryButton" class="upload-button bordered-button" style="display: none;">Generate New</button>
-      <div id="feedbackSection" style="display: none;">
-        <p id="feedbackQuestion">Did you like the generated image?</p>
-        <button id="thumbsUpButton" class="upload-button bordered-button">👍</button>
-        <button id="thumbsDownButton" class="upload-button bordered-button">👎</button>
-        
-        <!-- Input field for negative feedback -->
-        <div id="negativeFeedbackSection" style="display: none; margin-top: 10px;">
-          <input type="text" id="negativeFeedbackInput" placeholder="Please provide what can be improved and Try to Regenerate" style="width: 100%; padding: 5px; margin-bottom: 10px; background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px;"/>
-          <button id="regenerateImageButton" class="upload-button bordered-button">Regenerate Image</button>
-        </div>
-
-        <p id="feedbackMessage" style="margin-top: 10px; font-weight: bold;"></p>
+      <div style = "width: 50vw;">
+        <canvas id="hiddenCanvas" style="display: none;"></canvas>
+        <div id="loadingSpinner" style="display: none;">
+      <div class="spinner"></div>
+        <p id="processingText">Processing image...</p>
       </div>
-      <div id="error-message" style="display: none; color: red; margin-top: 10px; margin: 500px auto;">
-          Image generation failed. Please refresh and try again. If issue persists please contact us using the form at the bottom.
+      <button id="downloadButton" class="upload-button bordered-button" style="display: none;">Download Image</button>
+      <button id="retryButton" class="upload-button bordered-button" style="display: none;">Generate New</button>
+        <div id="feedbackSection" style="display: none;">
+          <p id="feedbackQuestion">Did you like the generated image?</p>
+          <button id="thumbsUpButton" class="upload-button bordered-button">👍</button>
+          <button id="thumbsDownButton" class="upload-button bordered-button">👎</button>
+          
+          <!-- Input field for negative feedback -->
+          <div id="negativeFeedbackSection" style="display: none; margin-top: 10px;">
+            <input type="text" id="negativeFeedbackInput" placeholder="Please provide what can be improved and Try to Regenerate" style="width: 100%; padding: 5px; margin-bottom: 10px; background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px;"/>
+            <button id="regenerateImageButton" class="upload-button bordered-button">Regenerate Image</button>
+          </div>
+
+          <p id="feedbackMessage" style="margin-top: 10px; font-weight: bold;"></p>
+        </div>
+        <div id="error-message" style="display: none; color: red; margin-top: 10px; margin: 500px auto;">
+            Image generation failed. Please refresh and try again. If issue persists please contact us using the form at the bottom.
+        </div>
       </div>
     </section>
   </section>
