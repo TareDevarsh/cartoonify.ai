@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let stylesSelect = "";
   const text = document.getElementById('processingText');
   const feedbackSection = document.getElementById('feedbackSection');
+  let processed_image = "";
+  document.getElementById('negativeFeedbackInput').value = "";
   // Trigger file input click on upload button click
   uploadButton.addEventListener('click', () => {
     fileInput.click();
@@ -214,20 +216,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    function downloadImage() {
-      const canvas = document.getElementById('hiddenCanvas');
-      const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-      const link = document.createElement('a');
-      link.download = 'processed-image.png';
-      link.href = image;
-      link.click();
+    function downloadBase64File(contentType, base64Data, fileName) {
+        const linkSource = `data:${contentType};base64,${base64Data}`;
+        const downloadLink = document.createElement("a");
+        downloadLink.href = linkSource;
+        downloadLink.download = fileName;
+        downloadLink.click();
     }
 
     // Add event listener to the download button
-    document.getElementById('downloadButton').addEventListener('click', downloadImage);
+    document.getElementById('downloadButton').addEventListener('click', () => {
+        // Check if processed_image is available and is a base64 string
+        if (processed_image && typeof processed_image === 'string') {
+            // Remove the data URL prefix if it exists
+            const base64Data = processed_image.replace(/^data:image\/(png|jpeg|jpg);base64,/, '');
+            
+            // Determine the content type (default to png if not specified)
+            const contentType = processed_image.startsWith('data:image/jpeg') ? 'image/jpeg' : 'image/png';
+            
+            // Call the download function
+            downloadBase64File(contentType, base64Data, 'processed-image.png');
+        } else {
+            console.error('No valid image data available for download');
+        }
+    });
 
     function postData(imageData, negativeFeedback="",styleData) {
-      fetch('https://platform-removal-medium-mature.trycloudflare.com/data', {    
+      fetch('http://localhost:5000/data', {    
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -255,7 +270,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Assuming the server returns the processed image data as base64 in the 'image' field
         if (data.image) {
-          renderImage(imageData,data.image);
+          processed_image = data.image
+          renderImage(imageData,processed_image);
         } else {
           console.error('No image data received from server');
         }
