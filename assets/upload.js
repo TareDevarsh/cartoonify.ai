@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function postData(imageData, negativeFeedback="",styleData) {
-      fetch('https://cigarette-authentic-robinson-dividend.trycloudflare.com  /data', {    
+      fetch('https://cigarette-authentic-robinson-dividend.trycloudflare.com/data', {    
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
