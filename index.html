@@ -16,6 +16,9 @@
   <script class="u-script" type="text/javascript" src="assets/cookie.js" defer="defer"></script>
   <meta name="referrer" content="origin">
   <meta name="description" content="Cartoonify your images and remove backgrounds automatically in just 5 seconds with a single click. Skip the tedious pixel-picking process. Upload your photo now and watch the magic happen!">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/output_1.ico">
   <link rel="icon" type="image/ico" sizes="32x32" href="assets/output_1.ico">
   <link rel="icon" type="image/ico" sizes="16x16" href="assets/output_1.ico">
@@ -31,18 +34,25 @@
   <script defer="defer" src="assets/upload.js"></script>
   <script type="application/ld+json">
     {
-      "@context": "http://cartoonify.ai.org",
+      "@context": "http://cartoonifyai.me",
       "@type": "",
-      "name": "Cartoonify.ai",
-      "logo": "cartoonify.ai/Landing_data/output_1.png"
+      "name": "CartoonifyAi",
+      "logo": "assets/Landing_data/02161.png"
     }
   </script>
   <meta name="theme-color" content="#478ac9">
   <meta property="og:title" content="Landing">
   <meta property="og:type" content="website">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <!-- Cookie Banner -->
+  <!-- Import the styles & scripts  -->
+    <script src="assets/cookiebanner.script.js"></script>
+    <link rel="stylesheet" href="assets/cookiebanner.style.css">
 </head>
-
 <body data-path-to-root="/" data-include-products="false" class="u-body u-xl-mode" data-lang="en" style="user-select: none;">
+
   <header class="u-clearfix u-header u-header" id="sec-c178">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
       <div class="u-logo-container" style="padding: 25px">
@@ -113,6 +123,13 @@
       </nav>
     </div>
   </header>
+  <!-- Initialize Cookie Notice  -->
+  <script>
+  $(document).ready(function() {
+      console.log("Document ready, initializing cookie banner");
+      cookiebanner.init();
+  });     
+  </script>
   <section class="skrollable u-align-center u-clearfix u-container-align-center u-image u-parallax u-shading u-section-1 skrollable-after" id="sec-ff73" data-image-width="1980" data-image-height="1320" style="background-attachment: fixed; background-position: 50% 0px, 50% -20vh;" data-bottom-top="background-position: 50% 0, 50% 0vh;" data-top-bottom="background-position: 50% 0, 50% -20vh">
     <div class="drop-area" id="drop-area" style="">
       <div class="drop-message">Drop image here</div>
@@ -1035,10 +1052,10 @@ minute. You can also see your wait time in the queue.</p>
       </div>
     </div>
   </section>
-  <footer style="display:none" class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-1d39">
+  <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-1d39">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <p class="u-align-center u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the Text Element.</p>
-      <p class="u-align-center u-text u-text-default u-text-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Image by <a href="https://www.freepik.com/photos/woman" class="u-active-none u-border-1 u-border-active-palette-2-base u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-white u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Freepik</a>
+      <p class="u-align-center u-small-text u-text u-text-variant u-text-1">© 2024 cartoonifyAi. All Rights Reserved.</p>
+      <p  style="display:none" class="u-align-center u-text u-text-default u-text-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Image by <a href="https://www.freepik.com/photos/woman" class="u-active-none u-border-1 u-border-active-palette-2-base u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-white u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Freepik</a>
       </p>
     </div>
   </footer>
