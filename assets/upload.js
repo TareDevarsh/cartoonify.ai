@@ -245,16 +245,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function postData(imageData, negativeFeedback="",styleData) {
-      fetch('https://api.cartoonifyai.me/data', {    
+      fetch('http://api.cartoonifyai.me/data', {    
         method: 'POST',
-        mode: 'cors',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           image: imageData,
           caption: negativeFeedback,
-          style: styleData
+          style: styleData,
         }),
       })
       .then((response) => {
