@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to scale the image and convert it to Base64
     function scaleImageToBase64(imageElement) {
-        const maxSize = 1200; // Maximum width or height
+        const maxSize = 1100; // Maximum width or height
         const scaleRatio = Math.min(maxSize / imageElement.naturalWidth, maxSize / imageElement.naturalHeight);
 
         // Create a canvas to draw the scaled image
