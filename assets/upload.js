@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function postData(imageData, negativeFeedback="",styleData) {
-      fetch('http://api.cartoonifyai.me/image', {    
+      fetch('https://api.cartoonifyai.me/image', {    
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
