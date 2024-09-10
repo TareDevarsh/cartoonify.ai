@@ -245,23 +245,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function postData(imageData, negativeFeedback="",styleData) {
-      fetch('https://api.cartoonifyai.me/image', {    
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      imageDataJSON = {
           image: imageData,
           caption: negativeFeedback,
           style: styleData,
-        }),
+        };
+      fetch("https://enemy-skating-circles-arrived.trycloudflare.com/image", {    
+        method: 'POST', // Change method to POST
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(imageDataJSON), // Send the image data as the body
       })
       .then((response) => {
-        console.log(response);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
+          console.log(response);
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
       })
       .then((data) => {
         console.log('Success:', data);
